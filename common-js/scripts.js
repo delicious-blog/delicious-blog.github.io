@@ -116,7 +116,7 @@ function initMap() {
 			"elementType": "all",
 			"stylers": [
 				{
-					"visibility": "off"
+					"visibility": "on"
 				}
 			]
 		},
