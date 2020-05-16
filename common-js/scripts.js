@@ -131,7 +131,7 @@ function initMap() {
 					"lightness": 65
 				},
 				{
-					"visibility": "on"
+					"visibility": "of"
 				}
 			]
 		},
