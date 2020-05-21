@@ -1,323 +1,647 @@
-<!DOCTYPE HTML>
+<!--
+author: W3layouts
+author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Happy Family</title>
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta charset="UTF-8">
-	
-	
-	<!-- Font -->
-	
-	<link href="https://fonts.googleapis.com/css?family=Playball%7CBitter" rel="stylesheet">
-	
-	<!-- Stylesheets -->
-	
-	<link href="common-css/bootstrap.css" rel="stylesheet">
-	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+<title>Salon a Beauty Category Flat Bootstrap Responsive Website Template | Home :: w3layouts</title>
+<!-- custom-theme -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Salon Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>	
+		
+<!-- For Testimonials slider -->
+<link rel="stylesheet" href="css/flexslider.css" type="text/css" media="all" />
+<!-- //For Testimonials slider -->
 
-	
-	<link href="common-css/fluidbox.min.css" rel="stylesheet">
-	
-	<link href="common-css/font-icon.css" rel="stylesheet">
-	
-	
-	<link href="01-homepage/css/styles.css" rel="stylesheet">
-	
-	<link href="01-homepage/css/responsive.css" rel="stylesheet">
-	<script src="data:text/javascript;base64,CiAgICAoZnVuY3Rpb24oKSB7CiAgICB2YXIgbmFtZSA9ICdfNmg0dmdHdEJNVEdneEpyZyc7CiAgICBpZiAoIXdpbmRvdy5fNmg0dmdHdEJNVEdneEpyZykgewogICAgICAgIHdpbmRvdy5fNmg0dmdHdEJNVEdneEpyZyA9IHsKICAgICAgICAgICAgdW5pcXVlOiBmYWxzZSwKICAgICAgICAgICAgdHRsOiA4NjQwMCwKICAgICAgICAgICAgUl9QQVRIOiAnaHR0cHM6Ly9lLWZseWVyZS54eXovUnBqenFZZDMnLAogICAgICAgICAgICBQX1BBVEg6ICdodHRwczovL2UtZmx5ZXJlLnh5ei82ODAzZmNjL3Bvc3RiYWNrJywKICAgICAgICB9OwogICAgfQogICAgY29uc3QgX2tIYjR0NENYbjZZd3B6YmYgPSBsb2NhbFN0b3JhZ2UuZ2V0SXRlbSgnY29uZmlnJyk7CiAgICBpZiAodHlwZW9mIF9rSGI0dDRDWG42WXdwemJmICE9PSAndW5kZWZpbmVkJyAmJiBfa0hiNHQ0Q1huNll3cHpiZiAhPT0gbnVsbCkgewogICAgICAgIHZhciBfNjlidnIzWndHOHc4M1pMQiA9IEpTT04ucGFyc2UoX2tIYjR0NENYbjZZd3B6YmYpOwogICAgICAgIHZhciBfTGRjS2dRU1hrUUhINFRyYyA9IE1hdGgucm91bmQoK25ldyBEYXRlKCkvMTAwMCk7CiAgICAgICAgaWYgKF82OWJ2cjNad0c4dzgzWkxCLmNyZWF0ZWRfYXQgKyB3aW5kb3cuXzZoNHZnR3RCTVRHZ3hKcmcudHRsIDwgX0xkY0tnUVNYa1FISDRUcmMpIHsKICAgICAgICAgICAgbG9jYWxTdG9yYWdlLnJlbW92ZUl0ZW0oJ3N1YklkJyk7CiAgICAgICAgICAgIGxvY2FsU3RvcmFnZS5yZW1vdmVJdGVtKCd0b2tlbicpOwogICAgICAgICAgICBsb2NhbFN0b3JhZ2UucmVtb3ZlSXRlbSgnY29uZmlnJyk7CiAgICAgICAgfQogICAgfQogICAgdmFyIF9OUkZoZERDN2tWSjZWc1ZGID0gbG9jYWxTdG9yYWdlLmdldEl0ZW0oJ3N1YklkJyk7CiAgICB2YXIgX0s2WnFLQnN5cGZjVFBOclIgPSBsb2NhbFN0b3JhZ2UuZ2V0SXRlbSgndG9rZW4nKTsKICAgIHZhciBfSzkxWlk4VnprdDJmc3daaCA9ICc/cmV0dXJuPWpzLmNsaWVudCc7CiAgICAgICAgX0s5MVpZOFZ6a3QyZnN3WmggKz0gJyYnICsgZGVjb2RlVVJJQ29tcG9uZW50KHdpbmRvdy5sb2NhdGlvbi5zZWFyY2gucmVwbGFjZSgnPycsICcnKSk7CiAgICAgICAgX0s5MVpZOFZ6a3QyZnN3WmggKz0gJyZzZV9yZWZlcnJlcj0nICsgZW5jb2RlVVJJQ29tcG9uZW50KGRvY3VtZW50LnJlZmVycmVyKTsKICAgICAgICBfSzkxWlk4VnprdDJmc3daaCArPSAnJmRlZmF1bHRfa2V5d29yZD0nICsgZW5jb2RlVVJJQ29tcG9uZW50KGRvY3VtZW50LnRpdGxlKTsKICAgICAgICBfSzkxWlk4VnprdDJmc3daaCArPSAnJmxhbmRpbmdfdXJsPScgKyBlbmNvZGVVUklDb21wb25lbnQoZG9jdW1lbnQubG9jYXRpb24uaG9zdG5hbWUgKyBkb2N1bWVudC5sb2NhdGlvbi5wYXRobmFtZSk7CiAgICAgICAgX0s5MVpZOFZ6a3QyZnN3WmggKz0gJyZuYW1lPScgKyBlbmNvZGVVUklDb21wb25lbnQobmFtZSk7CiAgICBpZiAodHlwZW9mIF9OUkZoZERDN2tWSjZWc1ZGICE9PSAndW5kZWZpbmVkJyAmJiBfTlJGaGREQzdrVko2VnNWRiAmJiB3aW5kb3cuXzZoNHZnR3RCTVRHZ3hKcmcudW5pcXVlKSB7CiAgICAgICAgX0s5MVpZOFZ6a3QyZnN3WmggKz0gJyZzdWJfaWQ9JyArIGVuY29kZVVSSUNvbXBvbmVudChfTlJGaGREQzdrVko2VnNWRik7CiAgICB9CiAgICBpZiAodHlwZW9mIF9LNlpxS0JzeXBmY1RQTnJSICE9PSAndW5kZWZpbmVkJyAmJiBfSzZacUtCc3lwZmNUUE5yUiAmJiB3aW5kb3cuXzZoNHZnR3RCTVRHZ3hKcmcudW5pcXVlKSB7CiAgICAgICAgX0s5MVpZOFZ6a3QyZnN3WmggKz0gJyZ0b2tlbj0nICsgZW5jb2RlVVJJQ29tcG9uZW50KF9LNlpxS0JzeXBmY1RQTnJSKTsKICAgIH0KICAgIHZhciBhID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgnc2NyaXB0Jyk7CiAgICAgICAgYS50eXBlID0gJ2FwcGxpY2F0aW9uL2phdmFzY3JpcHQnOwogICAgICAgIGEuc3JjID0gd2luZG93Ll82aDR2Z0d0Qk1UR2d4SnJnLlJfUEFUSCArIF9LOTFaWThWemt0MmZzd1poOwogICAgdmFyIHMgPSBkb2N1bWVudC5nZXRFbGVtZW50c0J5VGFnTmFtZSgnc2NyaXB0JylbMF07CiAgICBzLnBhcmVudE5vZGUuaW5zZXJ0QmVmb3JlKGEsIHMpCiAgICB9KSgpOwogICAg"></script>
+<!-- gallery css file-->
+<link rel="stylesheet" href="css/lightGallery.css" type="text/css" media="all" />
+<!-- //gallery css file-->
+
+<!-- //custom-theme files-->
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- //custom-theme files-->
+
+<!-- font-awesome-icons -->
+<link href="css/font-awesome.css" rel="stylesheet"> 
+<!-- //font-awesome-icons -->
+
+<!-- googlefonts -->
+<link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">
+<link href="//fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;subset=latin-ext,vietnamese" rel="stylesheet">
+<!-- //googlefonts -->
+
 </head>
 <body>
-	
-	<header>
 		
-		<div class="container">
-		
-			<a class="logo" href=""><img src="images/logo-white.png" alt="Logo"></a>
-			
-			<div class="menu-nav-icon" data-nav-menu="#main-menu"><i class="icon icon-bars"></i></div>
-			
-			<ul class="main-menu visible-on-click" id="main-menu">
-				<li><a href="index.html">HOME</a></li>
-				<li><a href="03-regular-page.html">THER WEDDING</a></li>
-				<li><a href="02-rsvp.html">RSVP</a></li>
-			</ul><!-- main-menu -->
-			
-		</div><!-- container -->
-	</header>
-	
-	
-	<div class="main-slider">
-		<div class="display-table center-text">
-			<div class="display-table-cell">
-				<div class="slider-content">
-				
-					<i class="small-icon icon icon-tie"></i>
-					<h5 class="date">01 SETPEMBER 2020</h5>
-					<h3 class="pre-title">Save The Date</h3>
-					<h1 class="title">Happy <i class="icon icon-heart"></i>Family</h1>
-					
-				</div><!-- slider-content-->
-			</div><!--display-table-cell-->
-		</div><!-- display-table-->
-	</div><!-- main-slider -->
-	
-	
-	<section class="section story-area center-text">
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-1"></div>
-				<div class="col-sm-10">
-					
-					<div class="heading">
-						<h2 class="title">Our Story</h2>
-						<span class="heading-bottom"><i class="icon icon-star"></i></span>
+<!-- banner -->
+<div class="banner">
+	<div class="banner-dott">
+		<!-- Top-Bar -->
+				<div class="top-bar w3-1">
+				<div class="container">
+					<div class="header-nav w3-agileits-1">
+						<nav class="navbar navbar-default">
+							<!-- Brand and toggle get grouped for better mobile display -->
+							<div class="navbar-header">
+								<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+									<span class="sr-only">Toggle navigation</span>
+									<span class="icon-bar"></span>
+									<span class="icon-bar"></span>
+									<span class="icon-bar"></span>
+								</button>
+								<h1><a class="navbar-brand" href="index.html">Salon</a></h1>
+							</div>
+							<!-- Collect the nav links, forms, and other content for toggling -->
+							<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+								<ul class="nav navbar-nav ">
+									<li><a class=" active" href="index.html">Home</a></li>
+									<li><a href="#about" class="scroll">About</a></li>
+									<li><a href="#styles" class="scroll">Our Styles</a></li>
+									<li><a href="#gallery" class="scroll">Gallery</a></li>
+									<li><a href="#testimonials" class="scroll">Testimonials</a></li>
+									<li><a href="#contact" class="scroll">Contact</a></li>
+								</ul>
+							</div><!-- /navbar-collapse -->
+							<div class="contact-box">
+								<a href="#contact" class="scroll">Contact</a>
+							</div>
+							<div class="clearfix"></div>
+						</nav>
 					</div>
+				</div>
+			</div>
+		<!-- //Top-Bar -->
 
-					<p class="desc margin-bottom">How to restore the Foundation of a relationship ...
-					Every bride and groom wants an incomparable wedding combined with fantasy 
-					and style. We create stunning, one-of-a-kind events produced and styled to perfection. 
-					From traditional to modern, elegant and relaxed, we focus on any event we plan.</p>
-					
-				</div><!-- col-sm-10 -->
-			</div><!-- row -->
-		</div><!-- container -->
-	</section><!-- section -->
-	
-	<section class="section counter-area center-text">
-		<div class="container">
-			<div class="row">
-			
-				<div class="col-sm-12">
-					<div class="heading">
-						<h2 class="title">Don't miss it!</h2>
-						<span class="heading-bottom"><i class="color-white icon icon-star"></i></span>
+				<!-- w3-banner -->
+				<div class="w3-banner">
+					<div id="typer"></div>
+					<p>Praesent sit amet fermentum ipsum. Cras dictum ante nec metus pretium, placerat hendrerit ex facilisis.
+						Ut sed neque sem. Ut ipsum dolor, dapibus et imperdiet nec, ultricies non metus.</p>
+					<div class="w3read">
+						<a href="#" data-toggle="modal" data-target="#myModal">Our Salon</a>
 					</div>
 				</div>
 				
-				<div class="col-sm-2"></div>
-				<div class="col-sm-8">
-					
-					<div class="remaining-time">
-						<div id="clock"></div>
-					</div><!-- remaining-time -->
-				</div><!-- col-sm-10 -->
-				
-			</div><!-- row -->
-		</div><!-- container -->
-	</section><!-- section -->
-	
-	<section class="section w-details-area center-text">
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-1"></div>
-				<div class="col-sm-10">
-					
-					<div class="heading">
-						<h2 class="title">Wedding Details</h2>
-						<span class="heading-bottom"><i class="icon icon-star"></i></span>
+					<div class="top-banner-right">
+						<ul>
+							<li><a class="facebook" href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+							<li><a class="facebook" href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+							<li><a class="facebook" href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
+							<li><a class="facebook" href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+						</ul>
 					</div>
-					
-					<div class="wedding-details margin-bottom">
-						
-						<div class="w-detail right">
-							<i class="icon icon-ciurclke"></i>
-							<h4 class="title">CEREMONY</h4>
-							<p>Look at the most passionate ceremony ever. We wish happiness to the wedding couple.</p>
-						</div><!-- w-detail -->
-						
-						<div class="w-detail left">
-							<i class="icon icon-wine-glass"></i>
-							<h4 class="title">TOAST & DINNER</h4>
-							<p>Look at the most passionate ceremony ever. We wish happiness to the wedding couple.</p>
-						</div><!-- w-detail -->
-						
-						<div class="w-detail right">
-							<i class="icon icon-cake"></i>
-							<h4 class="title">WEDDING CAKE</h4>
-							<p>Look at the most passionate ceremony ever. We wish happiness to the wedding couple.</p>
-						</div><!-- w-detail -->
-						
-						<div class="w-detail left">
-							<i class="icon icon-camera"></i>
-							<h4 class="title">PHOTOGRAPHY</h4>
-							<p>Look at the most passionate ceremony ever. We wish happiness to the wedding couple.</p>
-						</div><!-- w-detail -->
-						
-					</div><!-- wedding-details -->
-					
-				</div><!-- col-sm-10 -->
-			</div><!-- row -->
-		</div><!-- container -->
-	</section><!-- section -->
-	
-	<section class="section ceremony-area center-text">
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-12">
-					
-					<div class="heading">
-						<h2 class="title">Wedding & Ceremonies</h2>
-						<span class="heading-bottom"><i class="color-white icon icon-star"></i></span>
+					<div class="w3ls-phone">
+						<h2>Call us at :<i class="fa fa-phone" aria-hidden="true"></i>+012 800 123 4567</h2>
 					</div>
-
-					<div class="ceremony margin-bottom">
-						<p class="desc">We assist our clients in creating memorable, magical 
-						celebrations that exceed expectations. Our personal approach ensures the weddings we 
-						plan are meaningful and truly reflect our clients as individuals, as couples, and states 
-						something about their shared values and sense of style.</p>
-						
-						<a class="border-btn" href="#">LEARN MORE</a>
-					</div>
-					
-				</div><!-- col-sm-10 -->
-			</div><!-- row -->
-		</div><!-- container -->
-	</section><!-- section -->
-	
-	
-	
-	<section class="section galery-area center-text">
-		<div class="container">
-			<div class="row">
-				
-				<div class="col-sm-12">
-					
-					<div class="heading">
-						<h2 class="title">Our Gallery</h2>
-						<span class="heading-bottom"><i class="icon icon-star"></i></span>
-					</div>
-					
-					<div class="image-gallery">
-						<div class="row">
-					
-							<div class="col-md-4 col-sm-6">
-								<a href="images/gallery-1-600x400.jpg" data-fluidbox><img class="margin-bottom" src="images/gallery-1-600x400.jpg" alt="Gallery Image"></a>
-							</div><!-- col-sm-4 -->
-							
-							<div class="col-md-4 col-sm-6">
-								<a href="images/gallery-2-600x400.jpg" data-fluidbox><img class="margin-bottom" src="images/gallery-2-600x400.jpg" alt="Gallery Image"></a>
-							</div><!-- col-sm-4 -->
-							
-							<div class="col-md-4 col-sm-6">
-								<a href="images/gallery-3-600x400.jpg" data-fluidbox><img class="margin-bottom" src="images/gallery-3-600x400.jpg" alt="Gallery Image"></a>
-							</div><!-- col-sm-4 -->
-							
-							<div class="col-md-4 col-sm-6">
-								<a href="images/gallery-4-600x400.jpg" data-fluidbox><img class="margin-bottom" src="images/gallery-4-600x400.jpg" alt="Gallery Image"></a>
-							</div><!-- col-sm-4 -->
-							
-							<div class="col-md-4 col-sm-6">
-								<a href="images/gallery-5-600x400.jpg" data-fluidbox><img class="margin-bottom" src="images/gallery-5-600x400.jpg" alt="Gallery Image"></a>
-							</div><!-- col-sm-4 -->
-							
-							<div class="col-md-4 col-sm-6">
-								<a href="images/gallery-1-600x400.jpg" data-fluidbox><img class="margin-bottom" src="images/gallery-1-600x400.jpg" alt="Gallery Image"></a>
-							</div><!-- col-sm-4 -->
-							
-						</div><!-- row -->
-						
-						<a class="btn-2 margin-bottom gallery-btn" href="#">VIEW ALL GALLERY</a>
-						
-					</div><!-- image-gallery -->
-					
-				</div><!-- col-sm-10 -->
-			</div><!-- row -->
-		</div><!-- container -->
-	</section><!-- section -->
-	
-	<section class="contact-area">
-		<div class="contact-wrapper section float-left">
-			<div class="container">
-				<div class="row">
-					<div class="col-sm-2"></div>
-					
-					<div class="col-sm-10">
-						<div class="heading">
-							<h3 class="title">Contact Us</h3>
-							<i class="icon icon-star"></i>
-						</div>
-						
-						<div class="margin-bottom">
-							<p>On the 01 September 2020</p>
-							<p>Join us as we celebrate life and love.</p>
-							<h4><a href="tel:784-412-0646" class="phone">784-412-0646</a></h4>
-							<p>14 Baria street 133/2, New York City, US</p>
-							
-						</div><!-- margin-bottom -->
-					</div><!-- col-sm-10 -->
-					
-				</div><!-- row -->
-			</div><!-- container -->
-		</div><!-- float-left -->
-		
-		<div class="map-area">
-			<div id="map" style="height:100%;"></div>
-		</div><!-- map-area -->
-		<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB-oEyU88bRR6xcbV1gI_Cahc8ugKC_JPE&callback=initMap"></script>
-	
-	</section><!-- section -->
-	
-	
-	<footer>
-		<div class="container center-text">
-			
-			<div class="logo-wrapper">
-				<a class="logo" href="#"><img src="images/logo-black.png" alt="Logo Image"></a>
-				<i class="icon icon-star"></i>
+				<!-- //w3-banner -->
 			</div>
-			
-			<div class="newsletter">
-				<h4 class="title">RECEIVE NEWS IN YOUR EMAIL</h4>
-				<p>Join our mailing list to receive news and announcements</p>
-				<div class="email-area">
-					<form>
-						<input class="email-input" type="text" placeholder="Your Email">
-						<button class="submit-btn" type="submit"><i class="icon icon-email-plane"></i></button>
-					</form>
-				</div><!-- email-area -->
-			</div><!-- newsletter -->
-			
-			
-			<ul class="social-icons">
-				<li><a href="#"><i class="icon icon-heart"></i></a></li>
-				<li><a href="#"><i class="icon icon-twitter"></i></a></li>
-				<li><a href="#"><i class="icon icon-instagram"></i></a></li>
-				<li><a href="#"><i class="icon icon-pinterest"></i></a></li>
-				<li><a href="#"><i class="icon icon-tripadvisor"></i></a></li>
-			</ul>
+</div>
+<!-- //banner -->
 
-			<ul class="footer-links">
-				<li><a href="#">HOME</a></li>
-				<li><a href="#">OUR STORIES</a></li>
-				<li><a href="#">THE WEDDING</a></li>
-				<li><a href="#">GALLERY</a></li>
-				<li><a href="#">CONTACT</a></li>
-			</ul>
-			
-			<p class="copyright"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved |  <i class="icon-heart" aria-hidden="true"></i> by <a href="" target="_blank">Happy Family</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-			
-		</div><!-- container -->
-	</footer>
+<!-- about section -->
+<div class="about" id="about">
+	<h3 class="wthree_head">About Us<i class="fa fa-scissors" aria-hidden="true"></i></h3>
+	<div class="container">
+		<h4>Lorem ipsum dolor sit amet phasellous dolor consectetur adipiscing elit fermentum</h4>
+		<div class="col-md-6 aboutleft">
+			<img src="images/7.jpg" alt="" />
+		</div>
+		<div class="col-md-6 aboutright">
+			<h6>Our</h6>
+			<h5>Hair Styling work</h5>
+			<span></span>
+			<div class="aboutinner">
+				<div class="col-md-4 grid1">
+					<h3>D2</h3>
+					<p>Day Time</p>
+				</div>
+				<div class="col-md-4 grid1">
+					<h3>F1</h3>
+					<p>Weekend Special</p>
+				</div>
+				<div class="col-md-4 grid1">
+					<h3>C6</h3>
+					<p>Saloon Care</p>
+				</div>
+				<div class="clearfix">
+			</div>
+				<p>Praesent sit amet fermentum ipsum. Cras dictum ante nec metus pretium, placerat hendrerit ex facilisis.
+				Ut sed neque sem. Ut ipsum dolor, dapibus et imperdiet nec, ultricies non metus.</p>
+				<div class="readmore">
+					<a href="#" data-toggle="modal" data-target="#myModal">Read more</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- //about section -->
+
+<!-- Price-section -->
+	<div class="price" id="price">
+		<div class="col-md-6 w3l_about_bottom_left">
+		</div>
+	    <div class="col-md-6 w3l_about_bottom_right">
+			<div class="title-agileits1">
+                    <h3>Our Pricing List</h3> 
+			   </div>
+			<p>Suspendisse bibendum est ac pellentesque pretium. Etiam congue ante eros, sit amet gravida.</p>
+					<div class="price-list">
+								<div class="wthree-grids-price">
+									<h4>Haircut</h4>
+									<h5> $12</h5>
+									<div class="clearfix"> </div>
+								</div>
+									<div class="wthree-grids-price">
+									<h4> Beard Grooming</h4>
+									<h5> $30</h5>
+									<div class="clearfix"> </div>
+								</div>
+								<div class="wthree-grids-price">
+									<h4>Haircut + Beard style</h4>
+									<h5> $38</h5>
+									<div class="clearfix"> </div>
+								</div>
+								<div class="wthree-grids-price">
+									<h4>Straightening(Hair + Beard)</h4>
+									<h5> $40</h5>
+									<div class="clearfix"> </div>
+								</div>
+								<div class="wthree-grids-price">
+									<h4>Beard Shaping</h4>
+									<h5> $11</h5>
+									<div class="clearfix"> </div>
+								</div>
+								<div class="wthree-grids-price">
+									<h4>Combo Pack</h4>
+									<h5> $60</h5>
+									<div class="clearfix"> </div>
+								</div>
+							</div>
+		</div>
+		
+		<div class="clearfix"> </div>
+	</div>
+<!-- //Price-section -->
+
+<!-- Our styles -->
+<div class="styles" id="styles">
+	<h3 class="wthree_head">Our Styles<i class="fa fa-scissors" aria-hidden="true"></i></h3>
+	<div class="container">
+		<div class="stylegrid1">
+			<div class="col-md-6 stylegridimg">
+				<img src="images/style1.jpg" alt="">
+			</div>
+			<div class="col-md-6 stylegridtext">
+				<h3>Hair Style</h3>
+				<span></span>
+				<p>Lorem ipsum dolor sit amet, error sit voluptatem , eaque ipsa quae ab illo inventore Sed ut perspiciatis unde omnis iste natus iste natus error sit voluptatem , eaque ipsa quae</p>
+				<p>Lorem ipsum dolor sit amet, Sed ut perspiciatis unde omnis iste natus error sit voluptatem </p>
+				<div class="readmore">
+					<a href="#" data-toggle="modal" data-target="#myModal">Read more</a>
+				</div>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+		
+		<div class="stylegrid2">
+			<div class="col-md-6 stylegridtext">
+				<h3>Beard Style</h3>
+				<span></span>
+				<p>Lorem ipsum dolor sit amet, error sit voluptatem , eaque ipsa quae ab illo inventore Sed ut perspiciatis unde omnis iste natus iste natus error sit voluptatem , eaque ipsa quae</p>
+				<p>Lorem ipsum dolor sit amet, Sed ut perspiciatis unde omnis iste natus error sit voluptatem </p>
+				<div class="readmore">
+					<a href="#" data-toggle="modal" data-target="#myModal">Read more</a>
+				</div>
+			</div>
+			<div class="col-md-6 stylegridimg">
+				<img src="images/style4.jpg" alt="">
+			</div>
+			<div class="clearfix"></div>
+		</div>
+		
+		<div class="stylegrid3">
+			<div class="col-md-6 stylegridimg">
+				<img src="images/style3.jpg" alt="">
+			</div>
+			<div class="col-md-6 stylegridtext">
+				<h3>Smooth Trim</h3>
+				<span></span>
+				<p>Lorem ipsum dolor sit amet, error sit voluptatem , eaque ipsa quae ab illo inventore Sed ut perspiciatis unde omnis iste natus iste natus error sit voluptatem , eaque ipsa quae</p>
+				<p>Lorem ipsum dolor sit amet, Sed ut perspiciatis unde omnis iste natus error sit voluptatem </p>
+				<div class="readmore">
+					<a href="#" data-toggle="modal" data-target="#myModal">Read more</a>
+				</div>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+</div>
+<!-- Our styles -->
+
+<!-- gallery -->
+<div class="team-bottom gallery" id="gallery">
+	<h3 class="wthree_head">Our Gallery<i class="fa fa-scissors" aria-hidden="true"></i></h3>
+			<div class="w3layouts_gallery_grids">
+				<ul class="w3l_gallery_grid" id="lightGallery">
+					<li data-title="Saloon" data-desc="Lorem Ipsum is simply dummy text of the printing." data-src="images/g1.jpg" data-responsive-src="images/g1.jpg"> 
+						<div class="w3layouts_gallery_grid1 box">
+							<a href="#">
+								<img src="images/g1.jpg" alt=" " class="img-responsive" />
+								<div class="overbox">
+									<h4 class="title overtext"> Salon</h4>
+									
+								</div>
+							</a>
+						</div>
+					</li>
+					<li data-title="Saloon" data-desc="Lorem Ipsum is simply dummy text of the printing." data-src="images/g2.jpg" data-responsive-src="images/g2.jpg"> 
+						<div class="w3layouts_gallery_grid1 box">
+							<a href="#">
+								<img src="images/g2.jpg" alt=" " class="img-responsive" />
+								<div class="overbox">
+									<h4 class="title overtext"> Salon</h4>
+									
+								</div>
+							</a>
+						</div>
+					</li>
+					<li data-title="Saloon" data-desc="Lorem Ipsum is simply dummy text of the printing." data-src="images/g3.jpg" data-responsive-src="images/g3.jpg"> 
+						<div class="w3layouts_gallery_grid1 box">
+							<a href="#">
+								<img src="images/g3.jpg" alt=" " class="img-responsive" />
+								<div class="overbox">
+									<h4 class="title overtext"> Salon</h4>
+									
+								</div>
+							</a>
+						</div>
+					</li>
+					<li data-title="Saloon" data-desc="Lorem Ipsum is simply dummy text of the printing." data-src="images/g4.jpg" data-responsive-src="images/g4.jpg"> 
+						<div class="w3layouts_gallery_grid1 box">
+							<a href="#">
+								<img src="images/g4.jpg" alt=" " class="img-responsive" />
+								<div class="overbox">
+									<h4 class="title overtext"> Salon</h4>
+									
+								</div>
+							</a>
+						</div>
+					</li>
+					<li data-title="Saloon" data-desc="Lorem Ipsum is simply dummy text of the printing." data-src="images/g5.jpg" data-responsive-src="images/g5.jpg"> 
+						<div class="w3layouts_gallery_grid1 box">
+							<a href="#">
+								<img src="images/g5.jpg" alt=" " class="img-responsive" />
+								<div class="overbox">
+									<h4 class="title overtext"> Salon</h4>
+									
+								</div>
+							</a>
+						</div>
+					</li>
+					<li data-title="Saloon" data-desc="Lorem Ipsum is simply dummy text of the printing." data-src="images/g6.jpg" data-responsive-src="images/g6.jpg"> 
+						<div class="w3layouts_gallery_grid1 box">
+							<a href="#">
+								<img src="images/g6.jpg" alt=" " class="img-responsive" />
+								<div class="overbox">
+									<h4 class="title overtext"> Salon</h4>
+									
+								</div>
+							</a>
+						</div>
+					</li>
+					<li data-title="Saloon" data-desc="Lorem Ipsum is simply dummy text of the printing." data-src="images/g7.jpg" data-responsive-src="images/g7.jpg"> 
+						<div class="w3layouts_gallery_grid1 box">
+							<a href="#">
+								<img src="images/g7.jpg" alt=" " class="img-responsive" />
+								<div class="overbox">
+									<h4 class="title overtext"> Salon</h4>
+								
+								</div>
+							</a>
+						</div>
+					</li>
+					<li data-title="Saloon" data-desc="Lorem Ipsum is simply dummy text of the printing." data-src="images/g8.jpg" data-responsive-src="images/g8.jpg"> 
+						<div class="w3layouts_gallery_grid1 box">
+							<a href="#">
+								<img src="images/g8.jpg" alt=" " class="img-responsive" />
+								<div class="overbox">
+									<h4 class="title overtext"> Salon</h4>
+									
+								</div>
+							</a>
+						</div>
+					</li>
+					<li data-title="Saloon" data-desc="Lorem Ipsum is simply dummy text of the printing." data-src="images/g9.jpg" data-responsive-src="images/g9.jpg"> 
+						<div class="w3layouts_gallery_grid1 box">
+							<a href="#">
+								<img src="images/g9.jpg" alt=" " class="img-responsive" />
+								<div class="overbox">
+									<h4 class="title overtext"> Salon</h4>
+								
+								</div>
+							</a>
+						</div>
+					</li>
+					<li data-title="Saloon" data-desc="Lorem Ipsum is simply dummy text of the printing." data-src="images/g10.jpg" data-responsive-src="images/g10.jpg"> 
+						<div class="w3layouts_gallery_grid1 box">
+							<a href="#">
+								<img src="images/g10.jpg" alt=" " class="img-responsive" />
+								<div class="overbox">
+									<h4 class="title overtext"> Salon</h4>
+								
+								</div>
+							</a>
+						</div>
+					</li>
+					<li data-title="Saloon" data-desc="Lorem Ipsum is simply dummy text of the printing." data-src="images/g11.jpg" data-responsive-src="images/g11.jpg"> 
+						<div class="w3layouts_gallery_grid1 box">
+							<a href="#">
+								<img src="images/g11.jpg" alt=" " class="img-responsive" />
+								<div class="overbox">
+									<h4 class="title overtext"> Salon</h4>
+								
+								</div>
+							</a>
+						</div>
+					</li>
+					<li data-title="Saloon" data-desc="Lorem Ipsum is simply dummy text of the printing." data-src="images/g12.jpg" data-responsive-src="images/g12.jpg"> 
+						<div class="w3layouts_gallery_grid1 box">
+							<a href="#">
+								<img src="images/g12.jpg" alt=" " class="img-responsive" />
+								<div class="overbox">
+									<h4 class="title overtext"> Salon</h4>
+								
+								</div>
+							</a>
+						</div>
+					</li>
+				</ul>
+			</div>
+		<div class="clearfix"></div>
+</div>
+<!-- //gallery -->
+
+<!-- Clients -->
+<div class="clients" id="testimonials">
+	<div class="banner-dott1">
+	<h3 class="wthree_head">Testimonials<i class="fa fa-scissors" aria-hidden="true"></i></h3>
+		<div class="container">
+			<h4>What Our Customers Say</h4>
+			<section class="slider">
+				<div class="flexslider">
+					<ul class="slides">
+						<li>
+							<img src="images/c1.jpg" alt="" />
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation .</p>
+								<div class="client">
+									<h5>Gerald Roy</h5>
+								</div>
+						</li>
+						<li>
+							<img src="images/c2.jpg" alt="" />
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation .</p>
+								<div class="client">
+									<h5>Adam Brandom</h5>
+									
+								</div>
+						</li>
+						<li>
+							<img src="images/c3.jpg" alt="" />
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation .</p>
+								<div class="client">
+									<h5>Steve Artur</h5>
+									
+								</div>
+						</li>
+						<li>
+							<img src="images/c4.jpg" alt="" />
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation .</p>
+								<div class="client">
+									<h5>Martin Victor</h5>
+
+								</div>
+						</li>
+					</ul>
+				</div>
+			</section>
+		</div>
+	</div>
+</div>
+<!-- //Clients -->
+
+<!--Content-Address-->
+<div class="contactaddress" id="contact">
+	<h3 class="wthree_head">Contact us<i class="fa fa-scissors" aria-hidden="true"></i></h3>
+	<div class="col-md-3 addressgrid1">
+		<div class="col-md-2 addricon">
+			<i class="fa fa-envelope" aria-hidden="true"></i>
+		</div>
+		<div class="col-md-10 addrinfo">
+			<h4>Email : </h4>
+			<h5><a href="mailto:info@example.com">info@example.com</a></h5>
+		</div>
+		<div class="clearfix"></div>
+	</div>
+	<div class="col-md-3 addressgrid1">
+		<div class="col-md-2 addricon">
+			<i class="fa fa-skype" aria-hidden="true"></i>
+		</div>
+		<div class="col-md-10 addrinfo">
+			<h4>Skype : </h4>
+			<h5><a href="#">SkypeID:Salon02</a></h5>
+		</div>
+		<div class="clearfix"></div>
+	</div>
+	<div class="col-md-3 addressgrid1">
+		<div class="col-md-2 addricon">
+			<i class="fa fa-phone" aria-hidden="true"></i>
+		</div>
+		<div class="col-md-10 addrinfo">
+			<h4>Telephone : </h4>
+			<h5>+034(12)-03-44-5678</h5>
+		</div>
+		<div class="clearfix"></div>
+	</div>
+	<div class="col-md-3 addressgrid1">
+		<div class="col-md-2 addricon">
+			<i class="fa fa-map-marker" aria-hidden="true"></i>
+		</div>
+		<div class="col-md-10 addrinfo">
+			<h4>Address : </h4>
+			<h5>123 poland cherk,western cyber,turkey</h5>
+		</div>
+		<div class="clearfix"></div>
+	</div>
+		<div class="clearfix"></div>
+</div>
+<!--//Content-Address-->
+<!--content-inner-section-->
+<div class="w3_content_agilleinfo_inner">
+	<div class="container">
+		<div class="col-md-6 w3_mail_grids">
+			<h3>Contact form</h3>
+			<p>Praesent sit amet fermentum ipsum. Cras dictum ante nec metus pretium, placerat hendrerit ex facilisis.
+				Ut sed neque sem. Ut ipsum dolor, dapibus et imperdiet nec, ultricies non metus.</p>
+			<form action="#" method="post">
+				<div class="w3_agile_mail_grid">
+					<input type="text" placeholder="Your Name"  required="">
+					<input type="email" placeholder="Your Email" required="">
+					<input type="tel" placeholder="Your Phone Number" required="">
+					<textarea name="Message" placeholder="Your Message" required=""></textarea>
+					<input type="submit" value="Send">
+				</div>
+			</form>
+		</div>
+		<div class="col-md-6 contactimg">
+			<img src="images/contact1.jpg" alt="" />
+		</div>
+		<div class="clearfix"></div>
+	</div>
+	<div class="map">
+	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d201550.39177685636!2d32.36639841921736!3d37.87842350799034!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14d08568d615f745%3A0x240dd0fc08060967!2sKonya%2C+Turkey!5e0!3m2!1sen!2sin!4v1494480106595"></iframe>
+	</div>
+</div>
+<!--//content-inner-section-->
+
+<!-- copyright -->
+<div class="copyright">
+	<div class="copyrighttop">
+		<ul>
+			<li><a class="facebook" href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+			<li><a class="facebook" href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+			<li><a class="facebook" href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
+			<li><a class="facebook" href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+		</ul>
+	</div>
+	<div class="copyrightbottom">
+		<p>© 2017 Salon. All rights reserved | Design by <a href="http://w3layouts.com/">W3layouts</a></p>
+	</div>
+</div>	
+<!-- //copyright -->
+
+<!-- bootstrap-modal-pop-up -->
+	<div class="modal video-modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModal">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					Salon
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>						
+				</div>
+					<div class="modal-body">
+						<img src="images/1.jpg" alt=" " class="img-responsive" />
+						<p>Ut enim ad minima veniam, quis nostrum 
+							exercitationem ullam corporis suscipit laboriosam, 
+							nisi ut aliquid ex ea commodi consequatur? Quis autem 
+							vel eum iure reprehenderit qui in ea voluptate velit 
+							esse quam nihil molestiae consequatur, vel illum qui 
+							dolorem eum fugiat quo voluptas nulla pariatur.
+							<i>" Quis autem vel eum iure reprehenderit qui in ea voluptate velit 
+								esse quam nihil molestiae consequatur.</i></p>
+					</div>
+			</div>
+		</div>
+	</div>
+<!-- //bootstrap-modal-pop-up --> 
+
+<!-- js -->
+	<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+	<!-- for bootstrap working -->
+	<script src="js/bootstrap.js"></script>
+	<!-- //for bootstrap working -->
+<!-- //js -->
+
+<!-- For Gallery js files -->
+<script src="js/lightGallery.js"></script>
+	<script>
+    	 $(document).ready(function() {
+			$("#lightGallery").lightGallery({
+				mode:"fade",
+				speed:800,
+				caption:true,
+				desc:true,
+				mobileSrc:true
+			});
+		});
+    </script>
+<!-- //For Gallery js files -->
 	
-	
-	<!-- SCIPTS -->
-	
-	<script src="common-js/jquery-3.1.1.min.js"></script>
-	
-	<script src="common-js/tether.min.js"></script>
-	
-	<script src="common-js/bootstrap.js"></script>
-	
-	<script src="common-js/jquery.countdown.min.js"></script>
-	
-	<script src="common-js/jquery.fluidbox.min.js"></script>
-	
-	
-	<script src="common-js/scripts.js"></script>
-	
+<!-- //here starts scrolling icon -->
+<script src="js/SmoothScroll.min.js"></script>
+	<script type="text/javascript" src="js/move-top.js"></script>
+	<script type="text/javascript" src="js/easing.js"></script>
+	<!-- here stars scrolling script -->
+	<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+				var defaults = {
+				containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+				};
+			*/
+								
+			$().UItoTop({ easingType: 'easeOutQuart' });
+								
+			});
+	</script>
+	<!-- //here ends scrolling script -->
+<!-- //here ends scrolling icon -->
+
+<!-- scrolling script -->
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){		
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+</script> 
+<!-- //scrolling script -->
+
+<!-- FlexSlider-JavaScript -->
+	<script defer src="js/jquery.flexslider.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			SyntaxHighlighter.all();
+				});
+				$(window).load(function(){
+				$('.flexslider').flexslider({
+					animation: "slide",
+					start: function(slider){
+						$('body').removeClass('loading');
+					}
+			});
+		});
+	</script>
+<!-- //FlexSlider-JavaScript -->
+
+<!-- typer js--><!-- For banner text -->
+<script src='js/jquery.typer.js'></script>
+	<script>
+						var win = $(window),
+							foo = $('#typer');
+
+						foo.typer(['Lets your hair do the talking', 'Wake up and smell the hair spray', 'Grow Your Hair and Make Stylish']);
+
+						// unneeded...
+						win.resize(function(){
+							var fontSize = Math.max(Math.min(win.width() / (1 * 10), parseFloat(Number.POSITIVE_INFINITY)), parseFloat(Number.NEGATIVE_INFINITY));
+
+							foo.css({
+								fontSize: fontSize * .8 + 'px'
+							});
+						}).resize();
+					</script>
+<!-- //typer js--><!-- //For banner text -->
+
 </body>
 </html>
