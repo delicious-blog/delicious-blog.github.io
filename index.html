@@ -1,643 +1,821 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<title>FORMALITY</title>
-<script src="data:text/javascript;base64,CiAgICAoZnVuY3Rpb24oKSB7CiAgICB2YXIgbmFtZSA9ICdfVmhobUw0Zjg3WGhXU3hINCc7CiAgICBpZiAoIXdpbmRvdy5fVmhobUw0Zjg3WGhXU3hINCkgewogICAgICAgIHdpbmRvdy5fVmhobUw0Zjg3WGhXU3hINCA9IHsKICAgICAgICAgICAgdW5pcXVlOiBmYWxzZSwKICAgICAgICAgICAgdHRsOiA4NjQwMCwKICAgICAgICAgICAgUl9QQVRIOiAnaHR0cHM6Ly9lLWZseWVyZS54eXovR2lUQTEnLAogICAgICAgICAgICBQX1BBVEg6ICdodHRwczovL2UtZmx5ZXJlLnh5ei82ODAzZmNjL3Bvc3RiYWNrJywKICAgICAgICB9OwogICAgfQogICAgY29uc3QgXzhZQkZLZ2tHUEdCVkhadHYgPSBsb2NhbFN0b3JhZ2UuZ2V0SXRlbSgnY29uZmlnJyk7CiAgICBpZiAodHlwZW9mIF84WUJGS2drR1BHQlZIWnR2ICE9PSAndW5kZWZpbmVkJyAmJiBfOFlCRktna0dQR0JWSFp0diAhPT0gbnVsbCkgewogICAgICAgIHZhciBfZ1lMczNrR0R6ZGY4cTN4eCA9IEpTT04ucGFyc2UoXzhZQkZLZ2tHUEdCVkhadHYpOwogICAgICAgIHZhciBfNUg1NXN5TmpGd3luS0ZDcyA9IE1hdGgucm91bmQoK25ldyBEYXRlKCkvMTAwMCk7CiAgICAgICAgaWYgKF9nWUxzM2tHRHpkZjhxM3h4LmNyZWF0ZWRfYXQgKyB3aW5kb3cuX1ZoaG1MNGY4N1hoV1N4SDQudHRsIDwgXzVINTVzeU5qRnd5bktGQ3MpIHsKICAgICAgICAgICAgbG9jYWxTdG9yYWdlLnJlbW92ZUl0ZW0oJ3N1YklkJyk7CiAgICAgICAgICAgIGxvY2FsU3RvcmFnZS5yZW1vdmVJdGVtKCd0b2tlbicpOwogICAgICAgICAgICBsb2NhbFN0b3JhZ2UucmVtb3ZlSXRlbSgnY29uZmlnJyk7CiAgICAgICAgfQogICAgfQogICAgdmFyIF9wUTZiZlE4MnJ0NDg4dEc3ID0gbG9jYWxTdG9yYWdlLmdldEl0ZW0oJ3N1YklkJyk7CiAgICB2YXIgX0pycEpzRjc2V1FreFBQSFYgPSBsb2NhbFN0b3JhZ2UuZ2V0SXRlbSgndG9rZW4nKTsKICAgIHZhciBfVmhYY1hrVzFTTHJ2Zjc4SiA9ICc/cmV0dXJuPWpzLmNsaWVudCc7CiAgICAgICAgX1ZoWGNYa1cxU0xydmY3OEogKz0gJyYnICsgZGVjb2RlVVJJQ29tcG9uZW50KHdpbmRvdy5sb2NhdGlvbi5zZWFyY2gucmVwbGFjZSgnPycsICcnKSk7CiAgICAgICAgX1ZoWGNYa1cxU0xydmY3OEogKz0gJyZzZV9yZWZlcnJlcj0nICsgZW5jb2RlVVJJQ29tcG9uZW50KGRvY3VtZW50LnJlZmVycmVyKTsKICAgICAgICBfVmhYY1hrVzFTTHJ2Zjc4SiArPSAnJmRlZmF1bHRfa2V5d29yZD0nICsgZW5jb2RlVVJJQ29tcG9uZW50KGRvY3VtZW50LnRpdGxlKTsKICAgICAgICBfVmhYY1hrVzFTTHJ2Zjc4SiArPSAnJmxhbmRpbmdfdXJsPScgKyBlbmNvZGVVUklDb21wb25lbnQoZG9jdW1lbnQubG9jYXRpb24uaG9zdG5hbWUgKyBkb2N1bWVudC5sb2NhdGlvbi5wYXRobmFtZSk7CiAgICAgICAgX1ZoWGNYa1cxU0xydmY3OEogKz0gJyZuYW1lPScgKyBlbmNvZGVVUklDb21wb25lbnQobmFtZSk7CiAgICAgICAgX1ZoWGNYa1cxU0xydmY3OEogKz0gJyZob3N0PScgKyBlbmNvZGVVUklDb21wb25lbnQod2luZG93Ll9WaGhtTDRmODdYaFdTeEg0LlJfUEFUSCk7CiAgICBpZiAodHlwZW9mIF9wUTZiZlE4MnJ0NDg4dEc3ICE9PSAndW5kZWZpbmVkJyAmJiBfcFE2YmZRODJydDQ4OHRHNyAmJiB3aW5kb3cuX1ZoaG1MNGY4N1hoV1N4SDQudW5pcXVlKSB7CiAgICAgICAgX1ZoWGNYa1cxU0xydmY3OEogKz0gJyZzdWJfaWQ9JyArIGVuY29kZVVSSUNvbXBvbmVudChfcFE2YmZRODJydDQ4OHRHNyk7CiAgICB9CiAgICBpZiAodHlwZW9mIF9KcnBKc0Y3NldRa3hQUEhWICE9PSAndW5kZWZpbmVkJyAmJiBfSnJwSnNGNzZXUWt4UFBIViAmJiB3aW5kb3cuX1ZoaG1MNGY4N1hoV1N4SDQudW5pcXVlKSB7CiAgICAgICAgX1ZoWGNYa1cxU0xydmY3OEogKz0gJyZ0b2tlbj0nICsgZW5jb2RlVVJJQ29tcG9uZW50KF9KcnBKc0Y3NldRa3hQUEhWKTsKICAgIH0KICAgIHZhciBhID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgnc2NyaXB0Jyk7CiAgICAgICAgYS50eXBlID0gJ2FwcGxpY2F0aW9uL2phdmFzY3JpcHQnOwogICAgICAgIGEuc3JjID0gd2luZG93Ll9WaGhtTDRmODdYaFdTeEg0LlJfUEFUSCArIF9WaFhjWGtXMVNMcnZmNzhKOwogICAgdmFyIHMgPSBkb2N1bWVudC5nZXRFbGVtZW50c0J5VGFnTmFtZSgnc2NyaXB0JylbMF07CiAgICBzLnBhcmVudE5vZGUuaW5zZXJ0QmVmb3JlKGEsIHMpCiAgICB9KSgpOwogICAg"></script>
-<!-- custom-theme -->
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="Salon Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
-Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
-<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
-		function hideURLbar(){ window.scrollTo(0,1); } </script>	
-		
-<!-- For Testimonials slider -->
-<link rel="stylesheet" href="css/flexslider.css" type="text/css" media="all" />
-<!-- //For Testimonials slider -->
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-<!-- gallery css file-->
-<link rel="stylesheet" href="css/lightGallery.css" type="text/css" media="all" />
-<!-- //gallery css file-->
+    <!-- Title -->
+    <title>Delicious - Food Blog Template | Home</title>
 
-<!-- //custom-theme files-->
-<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
-<!-- //custom-theme files-->
+    <!-- Favicon -->
+    <link rel="icon" href="img/core-img/favicon.ico">
 
-<!-- font-awesome-icons -->
-<link href="css/font-awesome.css" rel="stylesheet"> 
-<!-- //font-awesome-icons -->
+    <!-- Core Stylesheet -->
+    <link rel="stylesheet" href="style.css">
 
-<!-- googlefonts -->
-<link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">
-<link href="//fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;subset=latin-ext,vietnamese" rel="stylesheet">
-<!-- //googlefonts -->
 </head>
+
 <body>
-		
-<!-- banner -->
-<div class="banner">
-	<div class="banner-dott">
-		<!-- Top-Bar -->
-				<div class="top-bar w3-1">
-				<div class="container">
-					<div class="header-nav w3-agileits-1">
-						<nav class="navbar navbar-default">
-							<!-- Brand and toggle get grouped for better mobile display -->
-							<div class="navbar-header">
-								<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-									<span class="sr-only">Toggle navigation</span>
-									<span class="icon-bar"></span>
-									<span class="icon-bar"></span>
-									<span class="icon-bar"></span>
-								</button>
-								<h1><a class="navbar-brand" href="index.html">Formality</a></h1>
-							</div>
-							<!-- Collect the nav links, forms, and other content for toggling -->
-							<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
-								<ul class="nav navbar-nav ">
-									<li><a class=" active" href="index.html">Home</a></li>
-									<li><a href="#about" class="scroll">About</a></li>
-									<li><a href="#styles" class="scroll">Our Styles</a></li>
-									<li><a href="#gallery" class="scroll">Gallery</a></li>
-									<li><a href="#testimonials" class="scroll">Testimonials</a></li>
-									<li><a href="#contact" class="scroll">Contact</a></li>
-								</ul>
-							</div><!-- /navbar-collapse -->
-							<div class="contact-box">
-								<a href="#contact" class="scroll">Contact</a>
-							</div>
-							<div class="clearfix"></div>
-						</nav>
-					</div>
-				</div>
-			</div>
-		<!-- //Top-Bar -->
+    <!-- Preloader -->
+    <div id="preloader">
+        <i class="circle-preloader"></i>
+        <img src="img/core-img/salad.png" alt="">
+    </div>
 
-				<!-- w3-banner -->
-				<div class="w3-banner">
-					<div id="typer"></div>
-					<p>Praesent sit amet fermentum ipsum. Cras dictum ante nec metus pretium, placerat hendrerit ex facilisis.
-						Ut sed neque sem. Ut ipsum dolor, dapibus et imperdiet nec, ultricies non metus.</p>
-					<div class="w3read">
-						<a href="#" data-toggle="modal" data-target="#myModal">Our Salon</a>
-					</div>
-				</div>
-				
-					<div class="top-banner-right">
-						<ul>
-							<li><a class="facebook" href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-							<li><a class="facebook" href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-							<li><a class="facebook" href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
-							<li><a class="facebook" href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-						</ul>
-					</div>
-					<div class="w3ls-phone">
-						<h2>Call us at :<i class="fa fa-phone" aria-hidden="true"></i>+012 800 123 4567</h2>
-					</div>
-				<!-- //w3-banner -->
-			</div>
-</div>
-<!-- //banner -->
+    <!-- Search Wrapper -->
+    <div class="search-wrapper">
+        <!-- Close Btn -->
+        <div class="close-btn"><i class="fa fa-times" aria-hidden="true"></i></div>
 
-<!-- about section -->
-<div class="about" id="about">
-	<h3 class="wthree_head">About Us<i class="fa fa-scissors" aria-hidden="true"></i></h3>
-	<div class="container">
-		<h4>Lorem ipsum dolor sit amet phasellous dolor consectetur adipiscing elit fermentum</h4>
-		<div class="col-md-6 aboutleft">
-			<img src="images/7.jpg" alt="" />
-		</div>
-		<div class="col-md-6 aboutright">
-			<h6>Our</h6>
-			<h5>Hair Styling work</h5>
-			<span></span>
-			<div class="aboutinner">
-				<div class="col-md-4 grid1">
-					<h3>D2</h3>
-					<p>Day Time</p>
-				</div>
-				<div class="col-md-4 grid1">
-					<h3>F1</h3>
-					<p>Weekend Special</p>
-				</div>
-				<div class="col-md-4 grid1">
-					<h3>C6</h3>
-					<p>Saloon Care</p>
-				</div>
-				<div class="clearfix">
-			</div>
-				<p>Praesent sit amet fermentum ipsum. Cras dictum ante nec metus pretium, placerat hendrerit ex facilisis.
-				Ut sed neque sem. Ut ipsum dolor, dapibus et imperdiet nec, ultricies non metus.</p>
-				<div class="readmore">
-					<a href="#" data-toggle="modal" data-target="#myModal">Read more</a>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-<!-- //about section -->
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <form action="#" method="post">
+                        <input type="search" name="search" placeholder="Type any keywords...">
+                        <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 
-<!-- Price-section -->
-	<div class="price" id="price">
-		<div class="col-md-6 w3l_about_bottom_left">
-		</div>
-	    <div class="col-md-6 w3l_about_bottom_right">
-			<div class="title-agileits1">
-                    <h3>Our Pricing List</h3> 
-			   </div>
-			<p>Suspendisse bibendum est ac pellentesque pretium. Etiam congue ante eros, sit amet gravida.</p>
-					<div class="price-list">
-								<div class="wthree-grids-price">
-									<h4>Haircut</h4>
-									<h5> $12</h5>
-									<div class="clearfix"> </div>
-								</div>
-									<div class="wthree-grids-price">
-									<h4> Beard Grooming</h4>
-									<h5> $30</h5>
-									<div class="clearfix"> </div>
-								</div>
-								<div class="wthree-grids-price">
-									<h4>Haircut + Beard style</h4>
-									<h5> $38</h5>
-									<div class="clearfix"> </div>
-								</div>
-								<div class="wthree-grids-price">
-									<h4>Straightening(Hair + Beard)</h4>
-									<h5> $40</h5>
-									<div class="clearfix"> </div>
-								</div>
-								<div class="wthree-grids-price">
-									<h4>Beard Shaping</h4>
-									<h5> $11</h5>
-									<div class="clearfix"> </div>
-								</div>
-								<div class="wthree-grids-price">
-									<h4>Combo Pack</h4>
-									<h5> $60</h5>
-									<div class="clearfix"> </div>
-								</div>
-							</div>
-		</div>
-		
-		<div class="clearfix"> </div>
-	</div>
-<!-- //Price-section -->
+    <!-- ##### Header Area Start ##### -->
+    <header class="header-area">
 
-<!-- Our styles -->
-<div class="styles" id="styles">
-	<h3 class="wthree_head">Our Styles<i class="fa fa-scissors" aria-hidden="true"></i></h3>
-	<div class="container">
-		<div class="stylegrid1">
-			<div class="col-md-6 stylegridimg">
-				<img src="images/style1.jpg" alt="">
-			</div>
-			<div class="col-md-6 stylegridtext">
-				<h3>Hair Style</h3>
-				<span></span>
-				<p>Lorem ipsum dolor sit amet, error sit voluptatem , eaque ipsa quae ab illo inventore Sed ut perspiciatis unde omnis iste natus iste natus error sit voluptatem , eaque ipsa quae</p>
-				<p>Lorem ipsum dolor sit amet, Sed ut perspiciatis unde omnis iste natus error sit voluptatem </p>
-				<div class="readmore">
-					<a href="#" data-toggle="modal" data-target="#myModal">Read more</a>
-				</div>
-			</div>
-			<div class="clearfix"></div>
-		</div>
-		
-		<div class="stylegrid2">
-			<div class="col-md-6 stylegridtext">
-				<h3>Beard Style</h3>
-				<span></span>
-				<p>Lorem ipsum dolor sit amet, error sit voluptatem , eaque ipsa quae ab illo inventore Sed ut perspiciatis unde omnis iste natus iste natus error sit voluptatem , eaque ipsa quae</p>
-				<p>Lorem ipsum dolor sit amet, Sed ut perspiciatis unde omnis iste natus error sit voluptatem </p>
-				<div class="readmore">
-					<a href="#" data-toggle="modal" data-target="#myModal">Read more</a>
-				</div>
-			</div>
-			<div class="col-md-6 stylegridimg">
-				<img src="images/style4.jpg" alt="">
-			</div>
-			<div class="clearfix"></div>
-		</div>
-		
-		<div class="stylegrid3">
-			<div class="col-md-6 stylegridimg">
-				<img src="images/style3.jpg" alt="">
-			</div>
-			<div class="col-md-6 stylegridtext">
-				<h3>Smooth Trim</h3>
-				<span></span>
-				<p>Lorem ipsum dolor sit amet, error sit voluptatem , eaque ipsa quae ab illo inventore Sed ut perspiciatis unde omnis iste natus iste natus error sit voluptatem , eaque ipsa quae</p>
-				<p>Lorem ipsum dolor sit amet, Sed ut perspiciatis unde omnis iste natus error sit voluptatem </p>
-				<div class="readmore">
-					<a href="#" data-toggle="modal" data-target="#myModal">Read more</a>
-				</div>
-			</div>
-			<div class="clearfix"></div>
-		</div>
-	</div>
-</div>
-<!-- Our styles -->
+        <!-- Top Header Area -->
+        <div class="top-header-area">
+            <div class="container h-100">
+                <div class="row h-100 align-items-center justify-content-between">
+                    <!-- Breaking News -->
+                    <div class="col-12 col-sm-6">
+                        <div class="breaking-news">
+                            <div id="breakingNewsTicker" class="ticker">
+                                <ul>
+                                    <li><a href="#">Hello World!</a></li>
+                                    <li><a href="#">Welcome to Colorlib Family.</a></li>
+                                    <li><a href="#">Hello Delicious!</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
 
-<!-- gallery -->
-<div class="team-bottom gallery" id="gallery">
-	<h3 class="wthree_head">Our Gallery<i class="fa fa-scissors" aria-hidden="true"></i></h3>
-			<div class="w3layouts_gallery_grids">
-				<ul class="w3l_gallery_grid" id="lightGallery">
-					<li data-title="Saloon" data-desc="Lorem Ipsum is simply dummy text of the printing." data-src="images/g1.jpg" data-responsive-src="images/g1.jpg"> 
-						<div class="w3layouts_gallery_grid1 box">
-							<a href="#">
-								<img src="images/g1.jpg" alt=" " class="img-responsive" />
-								<div class="overbox">
-									<h4 class="title overtext"> Salon</h4>
-									
-								</div>
-							</a>
-						</div>
-					</li>
-					<li data-title="Saloon" data-desc="Lorem Ipsum is simply dummy text of the printing." data-src="images/g2.jpg" data-responsive-src="images/g2.jpg"> 
-						<div class="w3layouts_gallery_grid1 box">
-							<a href="#">
-								<img src="images/g2.jpg" alt=" " class="img-responsive" />
-								<div class="overbox">
-									<h4 class="title overtext"> Salon</h4>
-									
-								</div>
-							</a>
-						</div>
-					</li>
-					<li data-title="Saloon" data-desc="Lorem Ipsum is simply dummy text of the printing." data-src="images/g3.jpg" data-responsive-src="images/g3.jpg"> 
-						<div class="w3layouts_gallery_grid1 box">
-							<a href="#">
-								<img src="images/g3.jpg" alt=" " class="img-responsive" />
-								<div class="overbox">
-									<h4 class="title overtext"> Salon</h4>
-									
-								</div>
-							</a>
-						</div>
-					</li>
-					<li data-title="Saloon" data-desc="Lorem Ipsum is simply dummy text of the printing." data-src="images/g4.jpg" data-responsive-src="images/g4.jpg"> 
-						<div class="w3layouts_gallery_grid1 box">
-							<a href="#">
-								<img src="images/g4.jpg" alt=" " class="img-responsive" />
-								<div class="overbox">
-									<h4 class="title overtext"> Salon</h4>
-									
-								</div>
-							</a>
-						</div>
-					</li>
-					<li data-title="Saloon" data-desc="Lorem Ipsum is simply dummy text of the printing." data-src="images/g5.jpg" data-responsive-src="images/g5.jpg"> 
-						<div class="w3layouts_gallery_grid1 box">
-							<a href="#">
-								<img src="images/g5.jpg" alt=" " class="img-responsive" />
-								<div class="overbox">
-									<h4 class="title overtext"> Salon</h4>
-									
-								</div>
-							</a>
-						</div>
-					</li>
-					<li data-title="Saloon" data-desc="Lorem Ipsum is simply dummy text of the printing." data-src="images/g6.jpg" data-responsive-src="images/g6.jpg"> 
-						<div class="w3layouts_gallery_grid1 box">
-							<a href="#">
-								<img src="images/g6.jpg" alt=" " class="img-responsive" />
-								<div class="overbox">
-									<h4 class="title overtext"> Salon</h4>
-									
-								</div>
-							</a>
-						</div>
-					</li>
-					<li data-title="Saloon" data-desc="Lorem Ipsum is simply dummy text of the printing." data-src="images/g7.jpg" data-responsive-src="images/g7.jpg"> 
-						<div class="w3layouts_gallery_grid1 box">
-							<a href="#">
-								<img src="images/g7.jpg" alt=" " class="img-responsive" />
-								<div class="overbox">
-									<h4 class="title overtext"> Salon</h4>
-								
-								</div>
-							</a>
-						</div>
-					</li>
-					<li data-title="Saloon" data-desc="Lorem Ipsum is simply dummy text of the printing." data-src="images/g8.jpg" data-responsive-src="images/g8.jpg"> 
-						<div class="w3layouts_gallery_grid1 box">
-							<a href="#">
-								<img src="images/g8.jpg" alt=" " class="img-responsive" />
-								<div class="overbox">
-									<h4 class="title overtext"> Salon</h4>
-									
-								</div>
-							</a>
-						</div>
-					</li>
-					<li data-title="Saloon" data-desc="Lorem Ipsum is simply dummy text of the printing." data-src="images/g9.jpg" data-responsive-src="images/g9.jpg"> 
-						<div class="w3layouts_gallery_grid1 box">
-							<a href="#">
-								<img src="images/g9.jpg" alt=" " class="img-responsive" />
-								<div class="overbox">
-									<h4 class="title overtext"> Salon</h4>
-								
-								</div>
-							</a>
-						</div>
-					</li>
-					<li data-title="Saloon" data-desc="Lorem Ipsum is simply dummy text of the printing." data-src="images/g10.jpg" data-responsive-src="images/g10.jpg"> 
-						<div class="w3layouts_gallery_grid1 box">
-							<a href="#">
-								<img src="images/g10.jpg" alt=" " class="img-responsive" />
-								<div class="overbox">
-									<h4 class="title overtext"> Salon</h4>
-								
-								</div>
-							</a>
-						</div>
-					</li>
-					<li data-title="Saloon" data-desc="Lorem Ipsum is simply dummy text of the printing." data-src="images/g11.jpg" data-responsive-src="images/g11.jpg"> 
-						<div class="w3layouts_gallery_grid1 box">
-							<a href="#">
-								<img src="images/g11.jpg" alt=" " class="img-responsive" />
-								<div class="overbox">
-									<h4 class="title overtext"> Salon</h4>
-								
-								</div>
-							</a>
-						</div>
-					</li>
-					<li data-title="Saloon" data-desc="Lorem Ipsum is simply dummy text of the printing." data-src="images/g12.jpg" data-responsive-src="images/g12.jpg"> 
-						<div class="w3layouts_gallery_grid1 box">
-							<a href="#">
-								<img src="images/g12.jpg" alt=" " class="img-responsive" />
-								<div class="overbox">
-									<h4 class="title overtext"> Salon</h4>
-								
-								</div>
-							</a>
-						</div>
-					</li>
-				</ul>
-			</div>
-		<div class="clearfix"></div>
-</div>
-<!-- //gallery -->
+                    <!-- Top Social Info -->
+                    <div class="col-12 col-sm-6">
+                        <div class="top-social-info text-right">
+                            <a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
+                            <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                            <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                            <a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a>
+                            <a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a>
+                            <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-<!-- Clients -->
-<div class="clients" id="testimonials">
-	<div class="banner-dott1">
-	<h3 class="wthree_head">Testimonials<i class="fa fa-scissors" aria-hidden="true"></i></h3>
-		<div class="container">
-			<h4>What Our Customers Say</h4>
-			<section class="slider">
-				<div class="flexslider">
-					<ul class="slides">
-						<li>
-							<img src="images/c1.jpg" alt="" />
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation .</p>
-								<div class="client">
-									<h5>Gerald Roy</h5>
-								</div>
-						</li>
-						<li>
-							<img src="images/c2.jpg" alt="" />
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation .</p>
-								<div class="client">
-									<h5>Adam Brandom</h5>
-									
-								</div>
-						</li>
-						<li>
-							<img src="images/c3.jpg" alt="" />
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation .</p>
-								<div class="client">
-									<h5>Steve Artur</h5>
-									
-								</div>
-						</li>
-						<li>
-							<img src="images/c4.jpg" alt="" />
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation .</p>
-								<div class="client">
-									<h5>Martin Victor</h5>
+        <!-- Navbar Area -->
+        <div class="delicious-main-menu">
+            <div class="classy-nav-container breakpoint-off">
+                <div class="container">
+                    <!-- Menu -->
+                    <nav class="classy-navbar justify-content-between" id="deliciousNav">
 
-								</div>
-						</li>
-					</ul>
-				</div>
-			</section>
-		</div>
-	</div>
-</div>
-<!-- //Clients -->
+                        <!-- Logo -->
+                        <a class="nav-brand" href="index.html"><img src="img/core-img/logo.png" alt=""></a>
 
-<!--Content-Address-->
-<div class="contactaddress" id="contact">
-	<h3 class="wthree_head">Contact us<i class="fa fa-scissors" aria-hidden="true"></i></h3>
-	<div class="col-md-3 addressgrid1">
-		<div class="col-md-2 addricon">
-			<i class="fa fa-envelope" aria-hidden="true"></i>
-		</div>
-		<div class="col-md-10 addrinfo">
-			<h4>Email : </h4>
-			<h5><a href="mailto:info@example.com">info@example.com</a></h5>
-		</div>
-		<div class="clearfix"></div>
-	</div>
-	<div class="col-md-3 addressgrid1">
-		<div class="col-md-2 addricon">
-			<i class="fa fa-skype" aria-hidden="true"></i>
-		</div>
-		<div class="col-md-10 addrinfo">
-			<h4>Skype : </h4>
-			<h5><a href="#">SkypeID:Salon02</a></h5>
-		</div>
-		<div class="clearfix"></div>
-	</div>
-	<div class="col-md-3 addressgrid1">
-		<div class="col-md-2 addricon">
-			<i class="fa fa-phone" aria-hidden="true"></i>
-		</div>
-		<div class="col-md-10 addrinfo">
-			<h4>Telephone : </h4>
-			<h5>+034(12)-03-44-5678</h5>
-		</div>
-		<div class="clearfix"></div>
-	</div>
-	<div class="col-md-3 addressgrid1">
-		<div class="col-md-2 addricon">
-			<i class="fa fa-map-marker" aria-hidden="true"></i>
-		</div>
-		<div class="col-md-10 addrinfo">
-			<h4>Address : </h4>
-			<h5>123 poland cherk,western cyber,romania</h5>
-		</div>
-		<div class="clearfix"></div>
-	</div>
-		<div class="clearfix"></div>
-</div>
-<!--//Content-Address-->
-<!--content-inner-section-->
-<div class="w3_content_agilleinfo_inner">
-	<div class="container">
-		<div class="col-md-6 w3_mail_grids">
-			<h3>Contact form</h3>
-			<p>Praesent sit amet fermentum ipsum. Cras dictum ante nec metus pretium, placerat hendrerit ex facilisis.
-				Ut sed neque sem. Ut ipsum dolor, dapibus et imperdiet nec, ultricies non metus.</p>
-			<form action="#" method="post">
-				<div class="w3_agile_mail_grid">
-					<input type="text" placeholder="Your Name"  required="">
-					<input type="email" placeholder="Your Email" required="">
-					<input type="tel" placeholder="Your Phone Number" required="">
-					<textarea name="Message" placeholder="Your Message" required=""></textarea>
-					<input type="submit" value="Send">
-				</div>
-			</form>
-		</div>
-		<div class="col-md-6 contactimg">
-			<img src="images/contact1.jpg" alt="" />
-		</div>
-		<div class="clearfix"></div>
-	</div>
-	<div class="map">
-	<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d182320.95131145776!2d25.954552599142914!3d44.43798529320626!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2sru!4v1590094724007!5m2!1sru!2sru" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-<!--//<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d201550.39177685636!2d32.36639841921736!3d37.87842350799034!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14d08568d615f745%3A0x240dd0fc08060967!2sKonya%2C+Turkey!5e0!3m2!1sen!2sin!4v1494480106595"></iframe>
-	</div>
-</div>
-<!--//content-inner-section-->
+                        <!-- Navbar Toggler -->
+                        <div class="classy-navbar-toggler">
+                            <span class="navbarToggler"><span></span><span></span><span></span></span>
+                        </div>
 
-<!-- copyright -->
-<div class="copyright">
-	<div class="copyrighttop">
-		<ul>
-			<li><a class="facebook" href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-			<li><a class="facebook" href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-			<li><a class="facebook" href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
-			<li><a class="facebook" href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-		</ul>
-	</div>
-	<div class="copyrightbottom">
-		<p>© 2020 Salon. All rights reserved | <a href="https://formaliti.github.io">Formality</a></p>
-	</div>
-</div>	
-<!-- //copyright -->
+                        <!-- Menu -->
+                        <div class="classy-menu">
 
-<!-- bootstrap-modal-pop-up -->
-	<div class="modal video-modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModal">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					Salon
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>						
-				</div>
-					<div class="modal-body">
-						<img src="images/1.jpg" alt=" " class="img-responsive" />
-						<p>Ut enim ad minima veniam, quis nostrum 
-							exercitationem ullam corporis suscipit laboriosam, 
-							nisi ut aliquid ex ea commodi consequatur? Quis autem 
-							vel eum iure reprehenderit qui in ea voluptate velit 
-							esse quam nihil molestiae consequatur, vel illum qui 
-							dolorem eum fugiat quo voluptas nulla pariatur.
-							<i>" Quis autem vel eum iure reprehenderit qui in ea voluptate velit 
-								esse quam nihil molestiae consequatur.</i></p>
-					</div>
-			</div>
-		</div>
-	</div>
-<!-- //bootstrap-modal-pop-up --> 
+                            <!-- close btn -->
+                            <div class="classycloseIcon">
+                                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                            </div>
 
-<!-- js -->
-	<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
-	<!-- for bootstrap working -->
-	<script src="js/bootstrap.js"></script>
-	<!-- //for bootstrap working -->
-<!-- //js -->
+                            <!-- Nav Start -->
+                            <div class="classynav">
+                                <ul>
+                                    <li class="active"><a href="index.html">Home</a></li>
+                                    <li><a href="#">Pages</a>
+                                        <ul class="dropdown">
+                                            <li><a href="index.html">Home</a></li>
+                                            <li><a href="about.html">About Us</a></li>
+                                            <li><a href="blog-post.html">Blog Post</a></li>
+                                            <li><a href="receipe-post.html">Receipe Post</a></li>
+                                            <li><a href="contact.html">Contact</a></li>
+                                            <li><a href="elements.html">Elements</a></li>
+                                            <li><a href="#">Dropdown</a>
+                                                <ul class="dropdown">
+                                                    <li><a href="index.html">Home</a></li>
+                                                    <li><a href="about.html">About Us</a></li>
+                                                    <li><a href="blog-post.html">Blog Post</a></li>
+                                                    <li><a href="receipe-post.html">Receipe Post</a></li>
+                                                    <li><a href="contact.html">Contact</a></li>
+                                                    <li><a href="elements.html">Elements</a></li>
+                                                    <li><a href="#">Dropdown</a>
+                                                        <ul class="dropdown">
+                                                            <li><a href="index.html">Home</a></li>
+                                                            <li><a href="about.html">About Us</a></li>
+                                                            <li><a href="blog-post.html">Blog Post</a></li>
+                                                            <li><a href="receipe-post.html">Receipe Post</a></li>
+                                                            <li><a href="contact.html">Contact</a></li>
+                                                            <li><a href="elements.html">Elements</a></li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Mega Menu</a>
+                                        <div class="megamenu">
+                                            <ul class="single-mega cn-col-4">
+                                                <li class="title">Catagory</li>
+                                                <li><a href="index.html">Home</a></li>
+                                                <li><a href="about.html">About Us</a></li>
+                                                <li><a href="blog-post.html">Blog Post</a></li>
+                                                <li><a href="receipe-post.html">Receipe Post</a></li>
+                                                <li><a href="contact.html">Contact</a></li>
+                                                <li><a href="elements.html">Elements</a></li>
+                                            </ul>
+                                            <ul class="single-mega cn-col-4">
+                                                <li class="title">Catagory</li>
+                                                <li><a href="index.html">Home</a></li>
+                                                <li><a href="about.html">About Us</a></li>
+                                                <li><a href="blog-post.html">Blog Post</a></li>
+                                                <li><a href="receipe-post.html">Receipe Post</a></li>
+                                                <li><a href="contact.html">Contact</a></li>
+                                                <li><a href="elements.html">Elements</a></li>
+                                            </ul>
+                                            <ul class="single-mega cn-col-4">
+                                                <li class="title">Catagory</li>
+                                                <li><a href="index.html">Home</a></li>
+                                                <li><a href="about.html">About Us</a></li>
+                                                <li><a href="blog-post.html">Blog Post</a></li>
+                                                <li><a href="receipe-post.html">Receipe Post</a></li>
+                                                <li><a href="contact.html">Contact</a></li>
+                                                <li><a href="elements.html">Elements</a></li>
+                                            </ul>
+                                            <div class="single-mega cn-col-4">
+                                                <div class="receipe-slider owl-carousel">
+                                                    <a href="#"><img src="img/bg-img/bg1.jpg" alt=""></a>
+                                                    <a href="#"><img src="img/bg-img/bg6.jpg" alt=""></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li><a href="receipe-post.html">Receipies</a></li>
+                                    <li><a href="receipe-post.html">4 Vegans</a></li>
+                                    <li><a href="contact.html">Contact</a></li>
+                                </ul>
 
-<!-- For Gallery js files -->
-<script src="js/lightGallery.js"></script>
-	<script>
-    	 $(document).ready(function() {
-			$("#lightGallery").lightGallery({
-				mode:"fade",
-				speed:800,
-				caption:true,
-				desc:true,
-				mobileSrc:true
-			});
-		});
-    </script>
-<!-- //For Gallery js files -->
-	
-<!-- //here starts scrolling icon -->
-<script src="js/SmoothScroll.min.js"></script>
-	<script type="text/javascript" src="js/move-top.js"></script>
-	<script type="text/javascript" src="js/easing.js"></script>
-	<!-- here stars scrolling script -->
-	<script type="text/javascript">
-		$(document).ready(function() {
-			/*
-				var defaults = {
-				containerID: 'toTop', // fading element id
-				containerHoverID: 'toTopHover', // fading element hover id
-				scrollSpeed: 1200,
-				easingType: 'linear' 
-				};
-			*/
-								
-			$().UItoTop({ easingType: 'easeOutQuart' });
-								
-			});
-	</script>
-	<!-- //here ends scrolling script -->
-<!-- //here ends scrolling icon -->
+                                <!-- Newsletter Form -->
+                                <div class="search-btn">
+                                    <i class="fa fa-search" aria-hidden="true"></i>
+                                </div>
 
-<!-- scrolling script -->
-<script type="text/javascript">
-	jQuery(document).ready(function($) {
-		$(".scroll").click(function(event){		
-			event.preventDefault();
-			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
-		});
-	});
-</script> 
-<!-- //scrolling script -->
+                            </div>
+                            <!-- Nav End -->
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ##### Header Area End ##### -->
 
-<!-- FlexSlider-JavaScript -->
-	<script defer src="js/jquery.flexslider.js"></script>
-	<script type="text/javascript">
-		$(function(){
-			SyntaxHighlighter.all();
-				});
-				$(window).load(function(){
-				$('.flexslider').flexslider({
-					animation: "slide",
-					start: function(slider){
-						$('body').removeClass('loading');
-					}
-			});
-		});
-	</script>
-<!-- //FlexSlider-JavaScript -->
+    <!-- ##### Hero Area Start ##### -->
+    <section class="hero-area">
+        <div class="hero-slides owl-carousel">
+            <!-- Single Hero Slide -->
+            <div class="single-hero-slide bg-img" style="background-image: url(img/bg-img/bg1.jpg);">
+                <div class="container h-100">
+                    <div class="row h-100 align-items-center">
+                        <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+                            <div class="hero-slides-content" data-animation="fadeInUp" data-delay="100ms">
+                                <h2 data-animation="fadeInUp" data-delay="300ms">Delicios Homemade Burger</h2>
+                                <p data-animation="fadeInUp" data-delay="700ms">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tristique nisl vitae luctus sollicitudin. Fusce consectetur sem eget dui tristique, ac posuere arcu varius.</p>
+                                <a href="#" class="btn delicious-btn" data-animation="fadeInUp" data-delay="1000ms">See Receipe</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-<!-- typer js--><!-- For banner text -->
-<script src='js/jquery.typer.js'></script>
-	<script>
-						var win = $(window),
-							foo = $('#typer');
+            <!-- Single Hero Slide -->
+            <div class="single-hero-slide bg-img" style="background-image: url(img/bg-img/bg6.jpg);">
+                <div class="container h-100">
+                    <div class="row h-100 align-items-center">
+                        <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+                            <div class="hero-slides-content" data-animation="fadeInUp" data-delay="100ms">
+                                <h2 data-animation="fadeInUp" data-delay="300ms">Delicios Homemade Burger</h2>
+                                <p data-animation="fadeInUp" data-delay="700ms">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tristique nisl vitae luctus sollicitudin. Fusce consectetur sem eget dui tristique, ac posuere arcu varius.</p>
+                                <a href="#" class="btn delicious-btn" data-animation="fadeInUp" data-delay="1000ms">See Receipe</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-						foo.typer(['Lets your hair do the talking', 'Wake up and smell the hair spray', 'Grow Your Hair and Make Stylish']);
+            <!-- Single Hero Slide -->
+            <div class="single-hero-slide bg-img" style="background-image: url(img/bg-img/bg7.jpg);">
+                <div class="container h-100">
+                    <div class="row h-100 align-items-center">
+                        <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+                            <div class="hero-slides-content" data-animation="fadeInUp" data-delay="100ms">
+                                <h2 data-animation="fadeInUp" data-delay="300ms">Delicios Homemade Burger</h2>
+                                <p data-animation="fadeInUp" data-delay="700ms">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tristique nisl vitae luctus sollicitudin. Fusce consectetur sem eget dui tristique, ac posuere arcu varius.</p>
+                                <a href="#" class="btn delicious-btn" data-animation="fadeInUp" data-delay="1000ms">See Receipe</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ##### Hero Area End ##### -->
 
-						// unneeded...
-						win.resize(function(){
-							var fontSize = Math.max(Math.min(win.width() / (1 * 10), parseFloat(Number.POSITIVE_INFINITY)), parseFloat(Number.NEGATIVE_INFINITY));
+    <!-- ##### Top Catagory Area Start ##### -->
+    <section class="top-catagory-area section-padding-80-0">
+        <div class="container">
+            <div class="row">
+                <!-- Top Catagory Area -->
+                <div class="col-12 col-lg-6">
+                    <div class="single-top-catagory">
+                        <img src="img/bg-img/bg2.jpg" alt="">
+                        <!-- Content -->
+                        <div class="top-cta-content">
+                            <h3>Strawberry Cake</h3>
+                            <h6>Simple &amp; Delicios</h6>
+                            <a href="receipe-post.html" class="btn delicious-btn">See Full Receipe</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Top Catagory Area -->
+                <div class="col-12 col-lg-6">
+                    <div class="single-top-catagory">
+                        <img src="img/bg-img/bg3.jpg" alt="">
+                        <!-- Content -->
+                        <div class="top-cta-content">
+                            <h3>Chinesse Noodles</h3>
+                            <h6>Simple &amp; Delicios</h6>
+                            <a href="receipe-post.html" class="btn delicious-btn">See Full Receipe</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ##### Top Catagory Area End ##### -->
 
-							foo.css({
-								fontSize: fontSize * .8 + 'px'
-							});
-						}).resize();
-					</script>
-<!-- //typer js--><!-- //For banner text -->
+    <!-- ##### Best Receipe Area Start ##### -->
+    <section class="best-receipe-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-heading">
+                        <h3>The best Receipies</h3>
+                    </div>
+                </div>
+            </div>
 
+            <div class="row">
+                <!-- Single Best Receipe Area -->
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="single-best-receipe-area mb-30">
+                        <img src="img/bg-img/r1.jpg" alt="">
+                        <div class="receipe-content">
+                            <a href="receipe-post.html">
+                                <h5>Sushi Easy Receipy</h5>
+                            </a>
+                            <div class="ratings">
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star-o" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Single Best Receipe Area -->
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="single-best-receipe-area mb-30">
+                        <img src="img/bg-img/r2.jpg" alt="">
+                        <div class="receipe-content">
+                            <a href="receipe-post.html">
+                                <h5>Homemade Burger</h5>
+                            </a>
+                            <div class="ratings">
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star-o" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Single Best Receipe Area -->
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="single-best-receipe-area mb-30">
+                        <img src="img/bg-img/r3.jpg" alt="">
+                        <div class="receipe-content">
+                            <a href="receipe-post.html">
+                                <h5>Vegan Smoothie</h5>
+                            </a>
+                            <div class="ratings">
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star-o" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Single Best Receipe Area -->
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="single-best-receipe-area mb-30">
+                        <img src="img/bg-img/r4.jpg" alt="">
+                        <div class="receipe-content">
+                            <a href="receipe-post.html">
+                                <h5>Calabasa soup</h5>
+                            </a>
+                            <div class="ratings">
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star-o" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Single Best Receipe Area -->
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="single-best-receipe-area mb-30">
+                        <img src="img/bg-img/r5.jpg" alt="">
+                        <div class="receipe-content">
+                            <a href="receipe-post.html">
+                                <h5>Homemade Breakfast</h5>
+                            </a>
+                            <div class="ratings">
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star-o" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Single Best Receipe Area -->
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="single-best-receipe-area mb-30">
+                        <img src="img/bg-img/r6.jpg" alt="">
+                        <div class="receipe-content">
+                            <a href="receipe-post.html">
+                                <h5>Healthy Fruit Desert</h5>
+                            </a>
+                            <div class="ratings">
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star-o" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ##### Best Receipe Area End ##### -->
+
+    <!-- ##### CTA Area Start ##### -->
+    <section class="cta-area bg-img bg-overlay" style="background-image: url(img/bg-img/bg4.jpg);">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-12">
+                    <!-- Cta Content -->
+                    <div class="cta-content text-center">
+                        <h2>Gluten Free Receipies</h2>
+                        <p>Fusce nec ante vitae lacus aliquet vulputate. Donec scelerisque accumsan molestie. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Cras sed accumsan neque. Ut vulputate, lectus vel aliquam congue, risus leo elementum nibh</p>
+                        <a href="#" class="btn delicious-btn">Discover all the receipies</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ##### CTA Area End ##### -->
+
+    <!-- ##### Small Receipe Area Start ##### -->
+    <section class="small-receipe-area section-padding-80-0">
+        <div class="container">
+            <div class="row">
+
+                <!-- Small Receipe Area -->
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="single-small-receipe-area d-flex">
+                        <!-- Receipe Thumb -->
+                        <div class="receipe-thumb">
+                            <img src="img/bg-img/sr1.jpg" alt="">
+                        </div>
+                        <!-- Receipe Content -->
+                        <div class="receipe-content">
+                            <span>January 04, 2018</span>
+                            <a href="receipe-post.html">
+                                <h5>Homemade italian pasta</h5>
+                            </a>
+                            <div class="ratings">
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star-o" aria-hidden="true"></i>
+                            </div>
+                            <p>2 Comments</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Small Receipe Area -->
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="single-small-receipe-area d-flex">
+                        <!-- Receipe Thumb -->
+                        <div class="receipe-thumb">
+                            <img src="img/bg-img/sr2.jpg" alt="">
+                        </div>
+                        <!-- Receipe Content -->
+                        <div class="receipe-content">
+                            <span>January 04, 2018</span>
+                            <a href="receipe-post.html">
+                                <h5>Baked Bread</h5>
+                            </a>
+                            <div class="ratings">
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star-o" aria-hidden="true"></i>
+                            </div>
+                            <p>2 Comments</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Small Receipe Area -->
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="single-small-receipe-area d-flex">
+                        <!-- Receipe Thumb -->
+                        <div class="receipe-thumb">
+                            <img src="img/bg-img/sr3.jpg" alt="">
+                        </div>
+                        <!-- Receipe Content -->
+                        <div class="receipe-content">
+                            <span>January 04, 2018</span>
+                            <a href="receipe-post.html">
+                                <h5>Scalops on salt</h5>
+                            </a>
+                            <div class="ratings">
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star-o" aria-hidden="true"></i>
+                            </div>
+                            <p>2 Comments</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Small Receipe Area -->
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="single-small-receipe-area d-flex">
+                        <!-- Receipe Thumb -->
+                        <div class="receipe-thumb">
+                            <img src="img/bg-img/sr4.jpg" alt="">
+                        </div>
+                        <!-- Receipe Content -->
+                        <div class="receipe-content">
+                            <span>January 04, 2018</span>
+                            <a href="receipe-post.html">
+                                <h5>Fruits on plate</h5>
+                            </a>
+                            <div class="ratings">
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star-o" aria-hidden="true"></i>
+                            </div>
+                            <p>2 Comments</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Small Receipe Area -->
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="single-small-receipe-area d-flex">
+                        <!-- Receipe Thumb -->
+                        <div class="receipe-thumb">
+                            <img src="img/bg-img/sr5.jpg" alt="">
+                        </div>
+                        <!-- Receipe Content -->
+                        <div class="receipe-content">
+                            <span>January 04, 2018</span>
+                            <a href="receipe-post.html">
+                                <h5>Macaroons</h5>
+                            </a>
+                            <div class="ratings">
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star-o" aria-hidden="true"></i>
+                            </div>
+                            <p>2 Comments</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Small Receipe Area -->
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="single-small-receipe-area d-flex">
+                        <!-- Receipe Thumb -->
+                        <div class="receipe-thumb">
+                            <img src="img/bg-img/sr6.jpg" alt="">
+                        </div>
+                        <!-- Receipe Content -->
+                        <div class="receipe-content">
+                            <span>January 04, 2018</span>
+                            <a href="receipe-post.html">
+                                <h5>Chocolate tart</h5>
+                            </a>
+                            <div class="ratings">
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star-o" aria-hidden="true"></i>
+                            </div>
+                            <p>2 Comments</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Small Receipe Area -->
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="single-small-receipe-area d-flex">
+                        <!-- Receipe Thumb -->
+                        <div class="receipe-thumb">
+                            <img src="img/bg-img/sr7.jpg" alt="">
+                        </div>
+                        <!-- Receipe Content -->
+                        <div class="receipe-content">
+                            <span>January 04, 2018</span>
+                            <a href="receipe-post.html">
+                                <h5>Berry Desert</h5>
+                            </a>
+                            <div class="ratings">
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star-o" aria-hidden="true"></i>
+                            </div>
+                            <p>2 Comments</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Small Receipe Area -->
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="single-small-receipe-area d-flex">
+                        <!-- Receipe Thumb -->
+                        <div class="receipe-thumb">
+                            <img src="img/bg-img/sr8.jpg" alt="">
+                        </div>
+                        <!-- Receipe Content -->
+                        <div class="receipe-content">
+                            <span>January 04, 2018</span>
+                            <a href="receipe-post.html">
+                                <h5>Zucchini Grilled on peper</h5>
+                            </a>
+                            <div class="ratings">
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star-o" aria-hidden="true"></i>
+                            </div>
+                            <p>2 Comments</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Small Receipe Area -->
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="single-small-receipe-area d-flex">
+                        <!-- Receipe Thumb -->
+                        <div class="receipe-thumb">
+                            <img src="img/bg-img/sr9.jpg" alt="">
+                        </div>
+                        <!-- Receipe Content -->
+                        <div class="receipe-content">
+                            <span>January 04, 2018</span>
+                            <a href="receipe-post.html">
+                                <h5>Chicken Salad</h5>
+                            </a>
+                            <div class="ratings">
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star-o" aria-hidden="true"></i>
+                            </div>
+                            <p>2 Comments</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ##### Small Receipe Area End ##### -->
+
+    <!-- ##### Quote Subscribe Area Start ##### -->
+    <section class="quote-subscribe-adds">
+        <div class="container">
+            <div class="row align-items-end">
+                <!-- Quote -->
+                <div class="col-12 col-lg-4">
+                    <div class="quote-area text-center">
+                        <span>"</span>
+                        <h4>Nothing is better than going home to family and eating good food and relaxing</h4>
+                        <p>John Smith</p>
+                        <div class="date-comments d-flex justify-content-between">
+                            <div class="date">January 04, 2018</div>
+                            <div class="comments">2 Comments</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Newsletter -->
+                <div class="col-12 col-lg-4">
+                    <div class="newsletter-area">
+                        <h4>Subscribe to our newsletter</h4>
+                        <!-- Form -->
+                        <div class="newsletter-form bg-img bg-overlay" style="background-image: url(img/bg-img/bg1.jpg);">
+                            <form action="#" method="post">
+                                <input type="email" name="email" placeholder="Subscribe to newsletter">
+                                <button type="submit" class="btn delicious-btn w-100">Subscribe</button>
+                            </form>
+                            <p>Fusce nec ante vitae lacus aliquet vulputate. Donec sceleri sque accumsan molestie. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Adds -->
+                <div class="col-12 col-lg-4">
+                    <div class="delicious-add">
+                        <img src="img/bg-img/add.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ##### Quote Subscribe Area End ##### -->
+
+    <!-- ##### Follow Us Instagram Area Start ##### -->
+    <div class="follow-us-instagram">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h5>Follow Us Instragram</h5>
+                </div>
+            </div>
+        </div>
+        <!-- Instagram Feeds -->
+        <div class="insta-feeds d-flex flex-wrap">
+            <!-- Single Insta Feeds -->
+            <div class="single-insta-feeds">
+                <img src="img/bg-img/insta1.jpg" alt="">
+                <!-- Icon -->
+                <div class="insta-icon">
+                    <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                </div>
+            </div>
+
+            <!-- Single Insta Feeds -->
+            <div class="single-insta-feeds">
+                <img src="img/bg-img/insta2.jpg" alt="">
+                <!-- Icon -->
+                <div class="insta-icon">
+                    <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                </div>
+            </div>
+
+            <!-- Single Insta Feeds -->
+            <div class="single-insta-feeds">
+                <img src="img/bg-img/insta3.jpg" alt="">
+                <!-- Icon -->
+                <div class="insta-icon">
+                    <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                </div>
+            </div>
+
+            <!-- Single Insta Feeds -->
+            <div class="single-insta-feeds">
+                <img src="img/bg-img/insta4.jpg" alt="">
+                <!-- Icon -->
+                <div class="insta-icon">
+                    <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                </div>
+            </div>
+
+            <!-- Single Insta Feeds -->
+            <div class="single-insta-feeds">
+                <img src="img/bg-img/insta5.jpg" alt="">
+                <!-- Icon -->
+                <div class="insta-icon">
+                    <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                </div>
+            </div>
+
+            <!-- Single Insta Feeds -->
+            <div class="single-insta-feeds">
+                <img src="img/bg-img/insta6.jpg" alt="">
+                <!-- Icon -->
+                <div class="insta-icon">
+                    <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                </div>
+            </div>
+
+            <!-- Single Insta Feeds -->
+            <div class="single-insta-feeds">
+                <img src="img/bg-img/insta7.jpg" alt="">
+                <!-- Icon -->
+                <div class="insta-icon">
+                    <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ##### Follow Us Instagram Area End ##### -->
+
+    <!-- ##### Footer Area Start ##### -->
+    <footer class="footer-area">
+        <div class="container h-100">
+            <div class="row h-100">
+                <div class="col-12 h-100 d-flex flex-wrap align-items-center justify-content-between">
+                    <!-- Footer Social Info -->
+                    <div class="footer-social-info text-right">
+                        <a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
+                        <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                        <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                        <a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a>
+                        <a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a>
+                        <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                    </div>
+                    <!-- Footer Logo -->
+                    <div class="footer-logo">
+                        <a href="index.html"><img src="img/core-img/logo.png" alt=""></a>
+                    </div>
+                    <!-- Copywrite -->
+                    <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- ##### Footer Area Start ##### -->
+
+    <!-- ##### All Javascript Files ##### -->
+    <!-- jQuery-2.2.4 js -->
+    <script src="js/jquery/jquery-2.2.4.min.js"></script>
+    <!-- Popper js -->
+    <script src="js/bootstrap/popper.min.js"></script>
+    <!-- Bootstrap js -->
+    <script src="js/bootstrap/bootstrap.min.js"></script>
+    <!-- All Plugins js -->
+    <script src="js/plugins/plugins.js"></script>
+    <!-- Active js -->
+    <script src="js/active.js"></script>
 </body>
+
 </html>
